@@ -1,0 +1,9 @@
+.profile-info {
+    margin-right: auto;
+}
+
+@media screen and (max-width: 425px) {
+    .profile-info {
+        margin-right: 0;
+    }
+}
