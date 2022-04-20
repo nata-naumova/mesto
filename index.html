@@ -8,12 +8,6 @@
     <link rel="stylesheet" href="pages/index.css">
 </head>
 <body class="page">
-    <!-- Модальное окно с формой -->
-    <div class="popup">
-        <div class="popup__container"></div>
-    </div>
-
-
     <header class="header">
         <img src="images/logo-white.svg" alt="Логотип светлый" class="header__logo">
     </header>
@@ -81,11 +75,24 @@
             </article>
 
         </section>
-
-        <footer class="footer">
-            <p class="footer__copyright">&copy;&nbsp;2020 Mesto Russia</p>
-        </footer>
     </main>
+
+    <footer class="footer">
+        <p class="footer__copyright">&copy;&nbsp;2020 Mesto Russia</p>
+    </footer>
+
+    <!-- Модальное окно с формой -->
+    <div class="popup">
+        <div class="popup__content">
+            <bitton class="btn popup__close"></bitton>
+            <form class="popup__form">
+                <h3 class="popup__title">Редактировать профиль</h3>
+                <input type="text" class="popup__input name-input" value="Жак-Ив Кусто">
+                <input type="text" class="popup__input job-input" value="Исследователь океана">
+                <bitton type="submit" class="btn popup__btn">Сохранить</bitton> 
+            </form>
+        </div>
+    </div>
 
     <script src="index.js"></script>
 </body>
