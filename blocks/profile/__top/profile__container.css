@@ -1,11 +1,11 @@
-.profile-info__container {
+.profile__top {
     display: flex;
     align-items: center;
     margin-bottom: 16px;
 }
 
 @media screen and (max-width: 425px) {
-    .profile-info__container {
+    .profile__top {
         margin-bottom: 14px;
     }
 }
