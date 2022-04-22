@@ -5,8 +5,8 @@
     margin-bottom: 60px;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 768px) {
     .footer {
-        margin-bottom: 36px;
+        margin: 0 19px 36px;
     }
 }
