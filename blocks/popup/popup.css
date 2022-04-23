@@ -13,11 +13,9 @@
     visibility: hidden;
     opacity: 0;
     transition: visibility 0.3s ease;
-    
-    
 }
 
-.popup_active {
+.popup_opened {
     /* показать */
     visibility: visible;
     opacity: 1;
@@ -123,6 +121,7 @@
 
 .popup__btn {
     background: #000000;
+    color: #ffffff;
     border-radius: 2px;
     width: 100%;
     padding: 14px 0 18px;
