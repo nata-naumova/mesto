@@ -24,7 +24,7 @@ function closeForm() {
     let subtitleInput = jobInput.value.length;
 
     popup.classList.remove('popup_opened');
-    
+
     if(titleName != titleInput) {
         nameInput.value = profileTitle.textContent;
     } else if(subtitleJob != subtitleInput) {
