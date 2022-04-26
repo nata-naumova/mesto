@@ -7,8 +7,10 @@ const editBtn = profile.querySelector('.profile__edit-btn');
 const popup = document.querySelector('.popup');
 const popupClose = popup.querySelector('.popup__close');
 const formElement = popup.querySelector('.popup__form');
-let nameInput = formElement.querySelector('.js-name-input');
-let jobInput = formElement.querySelector('.js-job-input');
+
+let nameInput = formElement.querySelector('#popup__input_name');
+let jobInput = formElement.querySelector('#popup__input_job');
+
 const saveBtn = popup.querySelector('.popup__btn');
 
 /* Функция открытия формы */
