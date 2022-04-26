@@ -1,6 +1,4 @@
 .popup_opened {
-    /* показать */
-    visibility: visible;
+    display: flex;
     opacity: 1;
-    transition: opacity 0.3s ease;
 }

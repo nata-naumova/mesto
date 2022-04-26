@@ -5,12 +5,11 @@
     position: fixed;
     left: 0;
     top: 0;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     z-index: 2;
     /* спрятать */
-    visibility: hidden;
     opacity: 0;
-    transition: visibility 0.3s ease;
+    transition: opacity 0.3s ease;
 }

@@ -1,6 +1,6 @@
 .page {
     background: #000000;
-    font-family: 'Inter';
+    font-family: 'Inter', 'Arial', sans-serif;
     font-style: normal;
     color: #FFFFFF;
     box-sizing: border-box;
