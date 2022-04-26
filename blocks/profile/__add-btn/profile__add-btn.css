@@ -1,8 +1,10 @@
 .profile__add-btn {
+    max-width: 150px;
+    width: 100%;
+    padding: 14px;
     border: 2px solid #FFFFFF;
     box-sizing: border-box;
     border-radius: 2px;
-    padding: 14px 64px;
 }
 
 .profile__add-btn::after {
@@ -16,9 +18,15 @@
     margin: 0 auto;
 }
 
-@media screen and (max-width: 425px)  {
+@media screen and (max-width: 600px) {
     .profile__add-btn {
-        width: 100%;
+        max-width: 80%;
         padding: 17px;
     }
 }
+
+@media screen and (max-width: 425px) {
+    .profile__add-btn {
+        max-width: 100%;
+    }
+} 
