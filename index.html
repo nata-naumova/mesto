@@ -34,7 +34,10 @@
 
     <template class="element-template">
         <article class="element">
-            <img src="" alt="" class="element__img">
+            <a href="#" class="element__img-wrapper">
+                <div class="element__img-bg popup-link" data-dismiss="popup_img"></div>
+                <img src="" alt="" class="element__img">
+            </a>
             <button type="button" class="element__trash btn" aria-label="Удалить карточку"></button>
             <div class="element__group">
                 <h2 class="element__title"></h2>
@@ -66,6 +69,15 @@
                 <button type="submit" class="popup__btn">Создать</button> 
             </form>
             <button type="button" class="btn popup__close" aria-label="Закрыть"></button>
+        </div>
+    </div>
+
+    <!-- Модальное окно картинки -->
+    <div id="popup_img" class="popup">
+        <div class="popup__content popup__content_img">
+            <button type="button" class="btn popup__close" aria-label="Закрыть"></button>
+            <img src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg" alt="Архыз" class="popup__img">
+            <h2 class="popup__img-title">Архыз</h2>
         </div>
     </div>
 
