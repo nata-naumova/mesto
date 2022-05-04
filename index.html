@@ -18,71 +18,32 @@
             <div class="profile__info">
                 <div class="profile__top">
                     <h1 class="profile__title">Жак-Ив Кусто</h1>
-                    <button type="button" class="profile__edit-btn btn" aria-label="Редактировать профиль"></button> 
+                    <button type="button" class="profile__edit-btn btn popup-link" aria-label="Редактировать профиль" data-dismiss="popup_1"></button> 
                 </div>
                 <p class="profile__subtitle">Исследователь океана</p>
             </div>
-            <button type="button" class="profile__add-btn btn" aria-label="Добавить запись"></button>
+            <button type="button" class="profile__add-btn btn popup-link" aria-label="Добавить запись" data-dismiss="popup_2"></button>
         </section>
 
-        <section class="elements">
-            <article class="element">
-                <img src="images/elements/element-1.jpg" alt="Карачаевск" class="element__img">
-                <div class="element__group">
-                    <h2 class="element__title">Карачаево черкесия</h2>
-                    <button type="button" class="element__btn" aria-label="Поставить лайк"></button>
-                </div>
-            </article>
-
-            <article class="element">
-                <img src="images/elements/element-2.jpg" alt="Гора Эльбрус" class="element__img">
-                <div class="element__group">
-                    <h2 class="element__title">Гора Эльбрус</h2>
-                    <button type="button" class="element__btn" aria-label="Поставить лайк"></button>
-                </div>
-            </article>
-
-            <article class="element">
-                <img src="images/elements/element-3.jpg" alt="Домбай" class="element__img">
-                <div class="element__group">
-                    <h2 class="element__title">Домбай</h2>
-                    <button type="button" class="element__btn" aria-label="Поставить лайк"></button>
-                </div>
-            </article>
-
-            <article class="element">
-                <img src="images/elements/element-1.jpg" alt="Алтай" class="element__img">
-                <div class="element__group">
-                    <h2 class="element__title">Алтай</h2>
-                    <button type="button" class="element__btn" aria-label="Поставить лайк"></button>
-                </div>
-            </article>
-
-            <article class="element">
-                <img src="images/elements/element-5.jpg" alt="Камчатский край" class="element__img">
-                <div class="element__group">
-                    <h2 class="element__title">Камчатский край</h2>
-                    <button type="button" class="element__btn" aria-label="Поставить лайк"></button>
-                </div>
-            </article>
-
-            <article class="element">
-                <img src="images/elements/element-6.jpg" alt="Кабардино-Балкария" class="element__img">
-                <div class="element__group">
-                    <h2 class="element__title">Кабардино-Балкария</h2>
-                    <button type="button" class="element__btn" aria-label="Поставить лайк"></button>
-                </div>
-            </article>
-
-        </section>
+        <section class="elements"></section>
     </main>
 
     <footer class="footer">
         <p class="footer__copyright">&copy;&nbsp;2020 Mesto Russia</p>
     </footer>
 
+    <template class="element-template">
+        <article class="element">
+            <img src="" alt="" class="element__img">
+            <div class="element__group">
+                <h2 class="element__title"></h2>
+                <button type="button" class="element__btn" aria-label="Поставить лайк"></button>
+            </div>
+        </article>
+    </template>
+
     <!-- Модальное окно с формой -->
-    <div class="popup">
+    <div id="popup_1" class="popup">
         <div class="popup__content">
             <h2 class="popup__title">Редактировать профиль</h2>
             <form action="#" method="POST" name="editProfileForm" class="popup__form">
@@ -94,6 +55,20 @@
         </div>
     </div>
 
-    <script src="scripts/index.js"></script>
+    <!-- Модальное окно добавления элемента -->
+    <div id="popup_2" class="popup">
+        <div class="popup__content">
+            <h2 class="popup__title">Новое место</h2>
+            <form action="#" method="POST" name="editProfileForm" class="popup__form">
+                <input type="text" name="nameCard" id="popup__input_nameCard" class="popup__input" placeholder="Название">
+                <input type="text" name="linkCard" id="popup__input_linkCard" class="popup__input" placeholder="Ссылка на картинку">
+                <button type="submit" class="popup__btn">Создать</button> 
+            </form>
+            <button type="button" class="btn popup__close" aria-label="Закрыть"></button>
+        </div>
+    </div>
+
+    <!--<script src="scripts/index.js"></script>-->
+    <script src="scripts/popup.js"></script>
 </body>
 </html>
