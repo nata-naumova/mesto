@@ -17,10 +17,10 @@
             <img src="images/avatar.jpg" alt="Аватар пользователя" class="profile__avatar">
             <div class="profile__info">
                 <div class="profile__top">
-                    <h1 class="profile__title">Жак-Ив Кусто</h1>
+                    <h1 class="profile__title">Шапочка</h1>
                     <button type="button" class="profile__edit-btn btn popup-link" aria-label="Редактировать профиль" data-dismiss="popup_1"></button> 
                 </div>
-                <p class="profile__subtitle">Исследователь океана</p>
+                <p class="profile__subtitle">Исследователь не океана</p>
             </div>
             <button type="button" class="profile__add-btn btn popup-link" aria-label="Добавить запись" data-dismiss="popup_2"></button>
         </section>
@@ -29,7 +29,7 @@
     </main>
 
     <footer class="footer">
-        <p class="footer__copyright">&copy;&nbsp;2020 Mesto Russia</p>
+        <p class="footer__copyright">&copy;&nbsp;2022 Mesto Russia</p>
     </footer>
 
     <template class="element-template">
@@ -63,9 +63,9 @@
     <div id="popup_2" class="popup">
         <div class="popup__content">
             <h2 class="popup__title">Новое место</h2>
-            <form action="#" method="POST" name="editProfileForm" class="popup__form">
-                <input type="text" name="nameCard" id="popup__input_nameCard" class="popup__input" placeholder="Название">
-                <input type="text" name="linkCard" id="popup__input_linkCard" class="popup__input" placeholder="Ссылка на картинку">
+            <form action="#" method="POST" name="editProfileForm" class="popup__form add-card">
+                <input type="text" name="nameCard" class="popup__input" placeholder="Название">
+                <input type="text" name="linkCard" class="popup__input" placeholder="Ссылка на картинку">
                 <button type="submit" class="popup__btn">Создать</button> 
             </form>
             <button type="button" class="btn popup__close" aria-label="Закрыть"></button>
@@ -76,8 +76,9 @@
     <div id="popup_img" class="popup">
         <div class="popup__content popup__content_img">
             <button type="button" class="btn popup__close" aria-label="Закрыть"></button>
-            <img src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg" alt="Архыз" class="popup__img">
-            <h2 class="popup__img-title">Архыз</h2>
+            <div class="popup-content"></div>
+            <img src="" alt="" class="popup__img">
+            <h2 class="popup__img-title"></h2>
         </div>
     </div>
 
