@@ -38,6 +38,7 @@ const handleLikeCard = (evt) => {
     like.classList.toggle('element__btn_active');
 };
 
+/* обработчик откр мода окна картинки сюда */
 const getCardElement = (cardName, cardLink) => {
     const newCardElement = template.content.cloneNode(true);
     const newCardName = newCardElement.querySelector('.element__title');
@@ -56,7 +57,7 @@ const getCardElement = (cardName, cardLink) => {
     return newCardElement;
 }
 
-cardForm.addEventListener('submit', (evt) => {
+cardForm.addEventListener('submit', function creatCard (evt) {
     evt.preventDefault();
     const name = evt.target.nameCard.value;
     const link = evt.target.linkCard.value;
@@ -66,7 +67,7 @@ cardForm.addEventListener('submit', (evt) => {
     }
     evt.target.reset();
     const targetClose = evt.target.closest('.popup');
-    popupClosed(targetClose);
+    closePopup(targetClose);
 })
 
 const renderCard = (wrap, cardName, cardLink) => {
@@ -83,16 +84,21 @@ const popupLinks = document.querySelectorAll('.popup-link');
 const popupClose = document.querySelectorAll('.popup__close');
 
 const profile = document.querySelector('.profile');
+const profileTitle = profile.querySelector('.profile__title');
+const profileSubtitle = profile.querySelector('.profile__subtitle');
 const profileForm = document.querySelector('.edit-profile');
-let nameInput = profileForm.querySelector('#popup__input_name');
-let jobInput = profileForm.querySelector('#popup__input_job');
+const nameInput = profileForm.querySelector('#popup__input_name');
+const jobInput = profileForm.querySelector('#popup__input_job');
 
-const formSubmitHandler = (evt) => {
+const popupImg = document.querySelector('.popup__img');
+const popupTitleImg = document.querySelector('.popup__img-title');
+
+const submitFormHandler = (evt) => {
     evt.preventDefault();
-    profile.querySelector('.profile__title').textContent = nameInput.value;
-    profile.querySelector('.profile__subtitle').textContent = jobInput.value;
+    profileTitle.textContent = nameInput.value;
+    profileSubtitle.textContent = jobInput.value;
     const targetClose = evt.target.closest('.popup');
-    popupClosed(targetClose);
+    closePopup(targetClose);
 }
 
 if(popupLinks.length > 0) {
@@ -101,23 +107,18 @@ if(popupLinks.length > 0) {
         popupLink.addEventListener('click', function (e) {
             const popupName = popupLink.dataset.dismiss;
             const currentPopup = document.getElementById(popupName);
-            popupOpen(currentPopup);
-            
+            openPopup(currentPopup);
             e.preventDefault();
-            
             if(popupName === 'popup_img') {
-                //для картинки
-                const popupImg = document.querySelector('.popup__img');
-                const popupTitleImg = document.querySelector('.popup__img-title');
                 const popupLinkImg = e.target.closest('.element__img-wrapper').querySelector('.element__img');
                 popupImg.src = popupLinkImg.src;
                 popupImg.alt = popupLinkImg.alt;
                 popupTitleImg.textContent = popupLinkImg.alt;
             } else if(popupName === 'popup_1') {
                 const editProfile = document.querySelector('.popup__btn');
-                nameInput.value = profile.querySelector('.profile__title').textContent;
-                jobInput.value = profile.querySelector('.profile__subtitle').textContent;
-                editProfile.addEventListener('click', formSubmitHandler);
+                nameInput.value = profileTitle.textContent;
+                jobInput.value = profileSubtitle.textContent;
+                editProfile.addEventListener('click', submitFormHandler);
             }
         });
     }
@@ -129,17 +130,17 @@ if(popupClose.length > 0) {
        const elem = popupClose[i];
        elem.addEventListener('click', function (e) {
            const targetClose = e.target.closest('.popup');
-            popupClosed(targetClose);
+           closePopup(targetClose);
            e.preventDefault();
        });
     }
 }
 
-function popupOpen(currentPopup) {
+function openPopup(currentPopup) {
     currentPopup.classList.add('popup_opened');
 }
 
-function popupClosed(targetClose) {
+function closePopup(targetClose) {
     targetClose.classList.remove('popup_opened');
 }
 
