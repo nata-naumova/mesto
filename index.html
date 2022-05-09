@@ -18,11 +18,11 @@
             <div class="profile__info">
                 <div class="profile__top">
                     <h1 class="profile__title">Шапочка</h1>
-                    <button type="button" class="profile__edit-btn btn popup-link" aria-label="Редактировать профиль" data-dismiss="popup_1"></button> 
+                    <button type="button" class="profile__edit-btn btn popup-edit-profile" aria-label="Редактировать профиль" data-dismiss="popup_1"></button> 
                 </div>
                 <p class="profile__subtitle">Исследователь не океана</p>
             </div>
-            <button type="button" class="profile__add-btn btn popup-link" aria-label="Добавить запись" data-dismiss="popup_2"></button>
+            <button type="button" class="profile__add-btn btn popup-add-card" aria-label="Добавить запись" data-dismiss="popup_2"></button>
         </section>
 
         <section class="elements"></section>
@@ -35,7 +35,7 @@
     <template class="element-template">
         <article class="element">
             <a href="#" class="element__img-wrapper">
-                <div class="element__img-bg popup-link" data-dismiss="popup_img"></div>
+                <div class="element__img-bg popup-img" data-dismiss="popup_img"></div>
                 <img src="#" alt="" class="element__img">
             </a>
             <button type="button" class="element__trash btn" aria-label="Удалить карточку"></button>
@@ -55,7 +55,7 @@
                 <input type="text" name="job" id="popup__input_job" class="popup__input" placeholder="О себе">
                 <button type="submit" class="popup__btn">Сохранить</button> 
             </form>
-            <button type="button" class="btn popup__close" aria-label="Закрыть"></button>
+            <button type="button" class="btn popup__close popup-close-edit" aria-label="Закрыть"></button>
         </div>
     </div>
 
@@ -63,19 +63,19 @@
     <div id="popup_2" class="popup">
         <div class="popup__content">
             <h2 class="popup__title">Новое место</h2>
-            <form action="#" method="POST" name="editProfileForm" class="popup__form add-card">
+            <form action="#" method="POST" name="addCardForm" class="popup__form add-card">
                 <input type="text" name="nameCard" class="popup__input" placeholder="Название">
                 <input type="text" name="linkCard" class="popup__input" placeholder="Ссылка на картинку">
                 <button type="submit" class="popup__btn">Создать</button> 
             </form>
-            <button type="button" class="btn popup__close" aria-label="Закрыть"></button>
+            <button type="button" class="btn popup__close popup-close-add" aria-label="Закрыть"></button>
         </div>
     </div>
 
     <!-- Модальное окно картинки -->
     <div id="popup_img" class="popup popup_overlay">
         <div class="popup__content popup__content_img">
-            <button type="button" class="btn popup__close" aria-label="Закрыть"></button>
+            <button type="button" class="btn popup__close popup-close-img" aria-label="Закрыть"></button>
             <img src="#" alt="" class="popup__img">
             <h2 class="popup__img-title"></h2>
         </div>

@@ -5,15 +5,8 @@
     margin-bottom: 60px;
     flex-shrink: 0;
 }
-
 @media screen and (max-width: 768px) {
     .footer {
-        margin: 0 19px 36px;
-    }
-}
-
-@media screen and (max-width: 425px) {
-    .footer {
-        width: auto;
+        margin-bottom: 36px;
     }
 }
