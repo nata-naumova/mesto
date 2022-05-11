@@ -11,7 +11,6 @@ const profileAddCard = profile.querySelector('.popup-add-card');
 const nameInput = profileForm.querySelector('#popup__input_name');
 const jobInput = profileForm.querySelector('#popup__input_job');
 const openEdit = document.querySelector('.popup-edit-profile');
-const editProfile = document.querySelector('.popup__btn');
 
 const popupImg = document.querySelector('.popup__img');
 const popupTitleImg = document.querySelector('.popup__img-title');
@@ -131,15 +130,14 @@ openEdit.addEventListener('click', () => {
     openPopup(popupEditForm);
     nameInput.value = profileTitle.textContent;
     jobInput.value = profileSubtitle.textContent;
-
-    editProfile.addEventListener('click', submitFormHandler);
 });
 
 profileAddCard.addEventListener('click', () => {
     openPopup(popupAddCard);
-    cardForm.addEventListener('submit', creatCard);
 });
 
+profileForm.addEventListener('submit', submitFormHandler);
+cardForm.addEventListener('submit', creatCard);
 closeBtnProfile.addEventListener('click', () => { closePopup (popupEditForm) })
 closeBtnImage.addEventListener('click', () => { closePopup(popupOpenImg) })
 closeBtnAddCard.addEventListener('click', () => { closePopup (popupAddCard) })
