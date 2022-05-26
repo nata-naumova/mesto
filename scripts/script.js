@@ -10,8 +10,8 @@ const profileTitle = profile.querySelector('.profile__title');
 const profileSubtitle = profile.querySelector('.profile__subtitle');
 const profileForm = document.querySelector('.edit-profile');
 const profileAddCard = profile.querySelector('.popup-add-card');
-const nameInput = profileForm.querySelector('#popup__input_name');
-const jobInput = profileForm.querySelector('#popup__input_job');
+const nameInput = profileForm.querySelector('#name-profile');
+const jobInput = profileForm.querySelector('#job-profile');
 const openEdit = document.querySelector('.popup-edit-profile');
 
 const popupImg = document.querySelector('.popup__img');
