@@ -1,4 +1,6 @@
 /* Объявления глобальных переменных */
+const popupOverlay = document.querySelectorAll('.popup');
+
 const cardList = document.querySelector('.elements');
 const cardForm = document.querySelector('.add-card');
 const template = document.querySelector('.element-template');
@@ -120,11 +122,29 @@ function creatCard (evt) {
 
 function openPopup(popup) {
     popup.classList.add('popup_opened');
+    document.addEventListener('keydown', handleEscPopup);
 }
 
 function closePopup(popup) {
     popup.classList.remove('popup_opened');
+    document.removeEventListener('keydown', handleEscPopup);
 }
+
+function handleEscPopup (evt) {
+    const popup = document.querySelector('.popup_opened');
+    if(evt.key === 'Escape') {
+        closePopup(popup);
+    } 
+}
+
+popupOverlay.forEach((popupEl) => {
+    const popup = popupEl.closest('.popup');
+    popupEl.addEventListener('mousedown', (evt) => {
+        if(evt.target.classList.contains('popup')) {
+            popup.classList.remove('popup_opened');
+        }
+    })
+})
 
 openEdit.addEventListener('click', () => {
     openPopup(popupEditForm);
@@ -141,4 +161,3 @@ cardForm.addEventListener('submit', creatCard);
 closeBtnProfile.addEventListener('click', () => { closePopup (popupEditForm) })
 closeBtnImage.addEventListener('click', () => { closePopup(popupOpenImg) })
 closeBtnAddCard.addEventListener('click', () => { closePopup (popupAddCard) })
-//document.addEventListener('click',e => console.log(e.target));

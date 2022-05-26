@@ -1,0 +1,16 @@
+.popup__input_error:last-of-type {
+    margin-bottom: 0;
+}
+
+.popup__input_error,
+.popup__input_error:focus {
+    border-bottom: 1px solid red;
+    margin-bottom: 5px;
+    width: 358px;
+}
+
+@media screen and (max-width: 768px) {
+    .popup__input_error {
+        width: 100%;
+    }
+}
