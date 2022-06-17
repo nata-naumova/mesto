@@ -1,6 +1,8 @@
 export const overlayList = document.querySelectorAll('.popup');
 export const cardList = document.querySelector('.elements');
 export const cardForm = document.querySelector('.add-card');
+export const nameCard = document.querySelector('#name-card');
+export const linkCard = document.querySelector('#link-card');
 export const template = document.querySelector('.element-template');
 export const profile = document.querySelector('.profile');
 export const profileTitle = profile.querySelector('.profile__title');
