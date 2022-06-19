@@ -42,11 +42,16 @@ function submitFormHandler (e) {
 }
 //размещение карточки
 function renderCards(wrapper, data) {
-    const card = new Card(data, template, handleCardClick);
-    wrapper.prepend(card.createCard());
+    wrapper.prepend(createCard(data));
 }
+
 //создание новой карточки
-function createCard(evt) {
+function createCard(item) {
+    const card = new Card(item, template, handleCardClick);
+    return card.createCard();
+ }
+
+function generateCard(evt) {
     evt.preventDefault();
     const data = {
         name: nameCard.value,
@@ -58,7 +63,7 @@ function createCard(evt) {
 }
 
 initialCards.forEach((item) => {
-    cardList.prepend(new Card(item, template, handleCardClick).createCard());
+    cardList.prepend(createCard(item));
 });
 
 function handleCardClick() {
@@ -109,7 +114,7 @@ profileAddCard.addEventListener('click', () => { //кнопка добавить
     openPopup(popupAddCard);
 });
 profileForm.addEventListener('submit', submitFormHandler); //мод окно с формой профиля
-cardForm.addEventListener('submit', createCard); //мод окно с формой карточки
+cardForm.addEventListener('submit', generateCard); //мод окно с формой карточки
 
 /*
 document.addEventListener('click', (e) => {
