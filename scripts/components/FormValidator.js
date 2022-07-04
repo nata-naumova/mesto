@@ -61,14 +61,14 @@ export class FormValidator {
         });
     }
     //включение валидации текущей формы
-    enableValidation() {
-        this._form.addEventListener('submit', (evt) => { evt.preventDefault();});
+    enableValidation = () => {
+        this._form.addEventListener('submit', (evt) => { evt.preventDefault(); });
         this._setEventListeners();
     }
-    
-    resetValidation() {
+
+    resetValidation = () => {
         this._toggleButtonState();
-        this._inputList.forEach((inputElement) => { 
+        this._inputList.forEach((inputElement) => {
             this._hideInputError(inputElement);
         });
     }

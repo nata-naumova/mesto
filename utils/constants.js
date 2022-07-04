@@ -1,25 +1,9 @@
-export const overlayList = document.querySelectorAll('.popup');
-export const cardList = document.querySelector('.elements');
 export const cardForm = document.querySelector('.add-card');
-export const nameCard = document.querySelector('#name-card');
-export const linkCard = document.querySelector('#link-card');
 export const template = document.querySelector('.element-template');
 export const profile = document.querySelector('.profile');
-export const profileTitle = profile.querySelector('.profile__title');
-export const profileSubtitle = profile.querySelector('.profile__subtitle');
 export const profileForm = document.querySelector('.edit-profile');
 export const profileAddCard = profile.querySelector('.popup-add-card');
-export const nameInput = profileForm.querySelector('#name-profile');
-export const jobInput = profileForm.querySelector('#job-profile');
 export const openEdit = document.querySelector('.popup-edit-profile');
-export const popupImg = document.querySelector('.popup__img');
-export const popupTitleImg = document.querySelector('.popup__img-title');
-export const popupEditForm = document.querySelector('#popup_1');
-export const popupAddCard = document.querySelector('#popup_2');
-export const popupOpenImg = document.querySelector('#popup_img');
-export const closeBtnProfile = document.querySelector('.popup-close-edit');
-export const closeBtnImage = document.querySelector('.popup-close-img');
-export const closeBtnAddCard = document.querySelector('.popup-close-add');
 
 export const initialCards = [
     {
@@ -44,7 +28,7 @@ export const initialCards = [
     },
     {
         name: 'Енот-полоскун',
-        link: 'https://wallbox.ru/resize/960x800/wallpapers/main/201523/85121fb83f62a3c.jpg'
+        link: 'https://oir.mobi/uploads/posts/2021-05/1619958346_10-oir_mobi-p-yenotiki-milie-zhivotnie-krasivo-foto-10.jpg'
     }
 ];
 
@@ -56,3 +40,26 @@ export const config = {
     inputErrorClass: 'popup__input_error',
     errorClass: 'popup__input-error_active'
 };
+export const formConfiguration = {
+    inputSelector: 'popup__input',
+    submitBtnSelector: 'popup__btn',
+    formSelector: 'popup__form',
+}
+export const popupConfiguration = {
+    activeModifier: 'popup_opened',
+    closeBtnSelector: 'popup__close',
+}
+export const profileConfiguration = {
+    titleSelector: 'profile__title',
+    jobSelector: 'profile__subtitle',
+}
+export const viewPopupConfiguration = {
+    imageSelector: 'popup__img',
+    captionSelector: 'popup__img-title',
+}
+export const cardsContainerSelector = 'elements';
+export const newCardPopupSelector = 'popup_type_add-card';
+export const profilePopupSelector = 'popup_type_edit-profile';
+export const imagePopupSelector = 'popup_type_image';
+export const newPlaceFormName = 'addCardForm';
+export const profileFormName = 'editProfileForm';

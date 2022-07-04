@@ -8,12 +8,16 @@ export class Card {
 
     _getTemplate() {
         const cardElement = this._cardSelector
-        .content
-        .querySelector('.element')
-        .cloneNode(true);
+            .content
+            .querySelector('.element')
+            .cloneNode(true);
         return cardElement;
     }
-    
+
+    _handleImageClick = () => {
+        this._handleCardClick({ name: this._name, link: this._link });
+    }
+
     createCard() {
         this._element = this._getTemplate();
         this._cardImage = this._element.querySelector('.element__img');
@@ -29,16 +33,14 @@ export class Card {
 
         this._setEventListeners();
         return this._element;
-    }  
-    
+    }
+
     _setEventListeners() {
         this._delBtn.addEventListener('click', this._handleDeleteCard);
         this._likeBtn.addEventListener('click', this._handleLikeCard);
-        this._openImg.addEventListener('click', () => {
-            this._handleCardClick(this._name, this._link);
-        });
+        this._openImg.addEventListener('click', this._handleImageClick);
     }
-    
+
     _handleLikeCard = () => {
         this._likeBtn.classList.toggle('element__btn_active');
     }
