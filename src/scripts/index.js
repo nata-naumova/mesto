@@ -41,14 +41,14 @@ const viewPopup = new PopupWithImage(
 
 viewPopup.setEventListeners();
 
-const createCards = (item) => {
+const createCard = (item) => {
     const card = new Card(item, template, viewPopup.open);
     return card.createCard();
 }
 
 const cardsContainer = new Section({
     items: initialCards.reverse(),
-    renderer: createCards,
+    renderer: createCard,
 }, cardsContainerSelector);
 
 cardsContainer.renderAll();
@@ -61,7 +61,6 @@ const newCardPopup = new PopupWithForm(
     newPlaceFormName,
     popupConfiguration,
     formConfiguration,
-    validCard.resetValidation,
     handleCardSubmit,
 );
 
@@ -69,23 +68,33 @@ newCardPopup.setEventListeners();
 
 
 const user = new UserInfo(profileConfiguration);
-function handleProfileFormSubmit(data) { user.setUserInfo(data) }
+
+function handleProfileFormSubmit(data) {
+    user.setUserInfo(data);
+}
 
 const profilePopup = new PopupWithForm(
     profilePopupSelector,
     profileFormName,
     popupConfiguration,
     formConfiguration,
-    validProfile.resetValidation,
     handleProfileFormSubmit,
-    user.getUserInfo,
 );
 profilePopup.setEventListeners();
 
+const addCardSubmitHandler = () => {
+    newCardPopup.open();
+    validCard.enableValidation();
+    validCard.resetValidation();
+}
 
-const addCardSubmitHandler = () => { newCardPopup.open() }
-
-const handleProfilePopupOpen = () => { profilePopup.open() }
+const handleProfilePopupOpen = () => { //при открытии попапа с профилем
+    validProfile.enableValidation();
+    profilePopup.open();
+    profilePopup.setInputValues(user.getUserInfo());
+    user.getUserInfo();
+    validProfile.resetValidation();
+}
 
 openEdit.addEventListener('click', handleProfilePopupOpen); //кнопка карандаш
 profileAddCard.addEventListener('click', addCardSubmitHandler); //кнопка плюсик

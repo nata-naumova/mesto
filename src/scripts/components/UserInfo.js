@@ -2,8 +2,8 @@ export default class UserInfo { //управление отображения и
     constructor({ titleSelector, jobSelector }) {
         this._titleSelector = titleSelector;
         this._jobSelector = jobSelector;
-        this._titleElement = document.querySelector(`.${this._titleSelector}`);
-        this._jobElement = document.querySelector(`.${this._jobSelector}`);
+        this._titleElement = document.querySelector(this._titleSelector);
+        this._jobElement = document.querySelector(this._jobSelector);
     }
 
     setUserInfo = (data) => {

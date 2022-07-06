@@ -41,25 +41,25 @@ export const config = {
     errorClass: 'popup__input-error_active'
 };
 export const formConfiguration = {
-    inputSelector: 'popup__input',
-    submitBtnSelector: 'popup__btn',
-    formSelector: 'popup__form',
+    inputSelector: '.popup__input',
+    submitButtonSelector: '.popup__btn',
+    formSelector: '.popup__form',
 }
 export const popupConfiguration = {
     activeModifier: 'popup_opened',
-    closeBtnSelector: 'popup__close',
+    closeButtonSelector: '.popup__close',
 }
 export const profileConfiguration = {
-    titleSelector: 'profile__title',
-    jobSelector: 'profile__subtitle',
+    titleSelector: '.profile__title',
+    jobSelector: '.profile__subtitle',
 }
 export const viewPopupConfiguration = {
-    imageSelector: 'popup__img',
-    captionSelector: 'popup__img-title',
+    imageSelector: '.popup__img',
+    captionSelector: '.popup__img-title',
 }
 export const cardsContainerSelector = 'elements';
-export const newCardPopupSelector = 'popup_type_add-card';
-export const profilePopupSelector = 'popup_type_edit-profile';
-export const imagePopupSelector = 'popup_type_image';
+export const newCardPopupSelector = '.popup_type_add-card';
+export const profilePopupSelector = '.popup_type_edit-profile';
+export const imagePopupSelector = '.popup_type_image';
 export const newPlaceFormName = 'addCardForm';
 export const profileFormName = 'editProfileForm';

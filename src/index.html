@@ -37,10 +37,10 @@
 
     <template class="element-template">
         <article class="element">
-            <a href="#" class="element__img-wrapper">
+            <div class="element__img-wrapper">
                 <div class="element__img-bg popup-img" data-dismiss="popup_img"></div>
                 <img src="#" alt="" class="element__img">
-            </a>
+            </div>
             <button type="button" class="element__trash btn" aria-label="Удалить карточку"></button>
             <div class="element__group">
                 <h2 class="element__title"></h2>
@@ -55,13 +55,13 @@
             <h2 class="popup__title">Редактировать профиль</h2>
             <form action="#" method="POST" name="editProfileForm" class="popup__form edit-profile" novalidate>
                 <label for="input-title" class="popup__field">
-                    <input type="text" name="inputTitle" id="input-title" class="popup__input" placeholder="Имя"
-                        required minlength="2" maxlength="40">
+                    <input type="text" id="input-title" class="popup__input" name="title" placeholder="Имя" required
+                        minlength="2" maxlength="40">
                     <span class="popup__input-error" id="input-title-error"></span>
                 </label>
                 <label for="input-job" class="popup__field">
-                    <input type="text" ninput-jobame="inputJob" id="input-job" class="popup__input" placeholder="О себе"
-                        required minlength="2" maxlength="200">
+                    <input type="text" id="input-job" class="popup__input" name="job" placeholder="О себе" required
+                        minlength="2" maxlength="200">
                     <span class="popup__input-error" id="input-job-error"></span>
                 </label>
                 <button type="submit" class="popup__btn">Сохранить</button>
@@ -76,12 +76,13 @@
             <h2 class="popup__title">Новое место</h2>
             <form action="#" method="POST" name="addCardForm" class="popup__form add-card" novalidate>
                 <label for="input-name" class="popup__field">
-                    <input type="text" name="inputName" id="input-name" class="popup__input" placeholder="Название"
-                        required minlength="2" maxlength="30">
+                    <input type="text" id="input-name" class="popup__input" name="name" placeholder="Название" required
+                        minlength="2" maxlength="30">
                     <span class="popup__input-error" id="input-name-error"></span>
                 </label>
                 <label for="input-link" class="popup__field">
-                    <input type="url" id="input-link" class="popup__input" placeholder="Ссылка на картинку" required>
+                    <input type="url" id="input-link" class="popup__input" name="link" placeholder="Ссылка на картинку"
+                        required>
                     <span class="popup__input-error" id="input-link-error"></span>
                 </label>
                 <button type="submit" class="popup__btn">Создать</button>
