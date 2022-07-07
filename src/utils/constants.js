@@ -1,5 +1,5 @@
 export const cardForm = document.querySelector('.add-card');
-export const template = document.querySelector('.element-template');
+export const template = '.element-template';
 export const profile = document.querySelector('.profile');
 export const profileForm = document.querySelector('.edit-profile');
 export const profileAddCard = profile.querySelector('.popup-add-card');
@@ -57,7 +57,7 @@ export const viewPopupConfiguration = {
     imageSelector: '.popup__img',
     captionSelector: '.popup__img-title',
 }
-export const cardsContainerSelector = 'elements';
+export const cardsContainerSelector = '.elements';
 export const newCardPopupSelector = '.popup_type_add-card';
 export const profilePopupSelector = '.popup_type_edit-profile';
 export const imagePopupSelector = '.popup_type_image';

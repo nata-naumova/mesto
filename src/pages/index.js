@@ -1,10 +1,10 @@
-import '../pages/index.css';
-import { Card } from "./components/Card.js";
-import { FormValidator } from "./components/FormValidator.js";
-import PopupWithImage from "./components/PopupWithImage.js";
-import PopupWithForm from "./components/PopupWithForm.js";
-import Section from "./components/Section.js";
-import UserInfo from "./components/UserInfo.js";
+import './index.css';
+import { Card } from "../components/Card.js";
+import { FormValidator } from "../components/FormValidator.js";
+import PopupWithImage from "../components/PopupWithImage.js";
+import PopupWithForm from "../components/PopupWithForm.js";
+import Section from "../components/Section.js";
+import UserInfo from "../components/UserInfo.js";
 
 import {
     cardForm,
@@ -84,15 +84,12 @@ profilePopup.setEventListeners();
 
 const addCardSubmitHandler = () => {
     newCardPopup.open();
-    validCard.enableValidation();
     validCard.resetValidation();
 }
 
 const handleProfilePopupOpen = () => { //при открытии попапа с профилем
-    validProfile.enableValidation();
     profilePopup.open();
     profilePopup.setInputValues(user.getUserInfo());
-    user.getUserInfo();
     validProfile.resetValidation();
 }
 

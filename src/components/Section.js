@@ -3,7 +3,7 @@ export default class Section { //отрисовка элементов на ст
         this._items = items;
         this._renderer = renderer;
         this._containerSelector = containerSelector;
-        this._container = document.querySelector(`.${this._containerSelector}`);
+        this._container = document.querySelector(this._containerSelector);
     }
 
     addItem(item) { //добавляем в контейнер

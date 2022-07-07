@@ -3,6 +3,8 @@ export default class Popup {
         this._popupSelector = popupSelector;
         this._activeModifier = popupConfig.activeModifier;
         this._closeButtonSelector = popupConfig.closeButtonSelector;
+        this._popup = document.querySelector(this._popupSelector);
+        this._closeButton = this._popup.querySelector(this._closeButtonSelector);
     }
 
     _handleEscClose = (evt) => {
@@ -22,8 +24,6 @@ export default class Popup {
     }
 
     setEventListeners() {
-        this._popup = document.querySelector(this._popupSelector);
-        this._closeButton = this._popup.querySelector(this._closeButtonSelector);
         this._popup.addEventListener('mousedown', this._handleCloseOverlayClick);
         this._closeButton.addEventListener('click', this._handleCloseBtnClick);
     }
