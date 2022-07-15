@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesto Russia</title>
+<script defer src="main.js"></script><link href="main.css" rel="stylesheet"></head>
+
+<body class="page">
+    <header class="header">
+        <img src="images/logo-white.9acae8482e5b5b17160c.svg" alt="Логотип сайта" class="header__logo">
+    </header>
+
+    <main class="main">
+        <section class="profile">
+            <img src="#" alt="Аватар пользователя" class="profile__avatar">
+            <button class="profile__avatar-btn"></button>
+            <div class="profile__info">
+                <div class="profile__top">
+                    <h1 class="profile__title"></h1>
+                    <button type="button" class="profile__edit-btn btn popup-edit-profile"
+                        aria-label="Редактировать профиль" data-dismiss="popup_1"></button>
+                </div>
+                <p class="profile__subtitle"></p>
+            </div>
+            <button type="button" class="profile__add-btn btn popup-add-card" aria-label="Добавить запись"
+                data-dismiss="popup_2"></button>
+        </section>
+
+        <section class="elements"></section>
+    </main>
+
+    <footer class="footer">
+        <p class="footer__copyright">&copy;&nbsp;2022 Mesto Russia</p>
+    </footer>
+
+    <template class="element-template">
+        <article class="element">
+            <div class="element__img-wrapper">
+                <div class="element__img-bg popup-img" data-dismiss="popup_img"></div>
+                <img src="#" alt="" class="element__img">
+            </div>
+            <button type="button" class="element__trash btn" aria-label="Удалить карточку"></button>
+            <div class="element__group">
+                <h2 class="element__title"></h2>
+                <div class="element__likes">
+                    <button type="button" class="element__like-btn" aria-label="Поставить лайк"></button>
+                    <span class="element__likes-number"></span>
+                </div>
+            </div>
+        </article>
+    </template>
+
+    <!-- Модальное окно с формой редактирования аватара -->
+    <div id="popup_avatar" class="popup popup_type_avatar">
+        <div class="popup__content">
+            <h2 class="popup__title">Обновить аватар</h2>
+            <form action="#" method="POST" name="avatarProfileForm" class="popup__form avatar-profile" novalidate>
+                <label for="input-avatar" class="popup__field">
+                    <input type="url" id="input-avatar" name="avatar" class="popup__input"
+                        placeholder="Ссылка на картинку" required>
+                    <span class="popup__input-error" id="input-avatar-error"></span>
+                </label>
+                <button type="submit" class="popup__btn">Сохранить</button>
+            </form>
+            <button type="button" class="btn popup__close popup-close-avatar" aria-label="Закрыть"></button>
+        </div>
+    </div>
+
+    <!-- Модальное окно с формой редактирования профиля -->
+    <div id="popup_1" class="popup popup_type_edit-profile">
+        <div class="popup__content">
+            <h2 class="popup__title">Редактировать профиль</h2>
+            <form action="#" method="POST" name="editProfileForm" class="popup__form edit-profile" novalidate>
+                <label for="input-title" class="popup__field">
+                    <input type="text" id="input-title" class="popup__input" name="name" placeholder="Имя" required
+                        minlength="2" maxlength="40">
+                    <span class="popup__input-error" id="input-title-error"></span>
+                </label>
+                <label for="input-job" class="popup__field">
+                    <input type="text" id="input-job" class="popup__input" name="about" placeholder="О себе" required
+                        minlength="2" maxlength="200">
+                    <span class="popup__input-error" id="input-job-error"></span>
+                </label>
+                <button type="submit" class="popup__btn">Сохранить</button>
+            </form>
+            <button type="button" class="btn popup__close popup-close-edit" aria-label="Закрыть"></button>
+        </div>
+    </div>
+
+    <!-- Модальное окно добавления элемента -->
+    <div id="popup_2" class="popup popup_type_add-card">
+        <div class="popup__content">
+            <h2 class="popup__title">Новое место</h2>
+            <form action="#" method="POST" name="addCardForm" class="popup__form add-card" novalidate>
+                <label for="input-name" class="popup__field">
+                    <input type="text" id="input-name" class="popup__input" name="name" placeholder="Название" required
+                        minlength="2" maxlength="30">
+                    <span class="popup__input-error" id="input-name-error"></span>
+                </label>
+                <label for="input-link" class="popup__field">
+                    <input type="url" id="input-link" class="popup__input" name="link" placeholder="Ссылка на картинку"
+                        required>
+                    <span class="popup__input-error" id="input-link-error"></span>
+                </label>
+                <button type="submit" class="popup__btn">Создать</button>
+            </form>
+            <button type="button" class="btn popup__close popup-close-add" aria-label="Закрыть"></button>
+        </div>
+    </div>
+
+    <!-- Модальное окно удаления карточки -->
+    <div class="popup popup_type_delete-card">
+        <div class="popup__content">
+            <button type="button" class="btn popup__close popup-close-delete" aria-label="Закрыть"></button>
+            <h2 class="popup__title popup__title_delete">Вы уверены?</h2>
+            <form action="#" name="deleteCardForm" class="popup__form delete-card" novalidate>
+                <button type="submit" class="popup__btn">Да</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Модальное окно картинки -->
+    <div id="popup_img" class="popup popup_overlay popup_type_image">
+        <div class="popup__content popup__content_img">
+            <button type="button" class="btn popup__close popup-close-img" aria-label="Закрыть"></button>
+            <img src="#" alt="" class="popup__img">
+            <h2 class="popup__img-title"></h2>
+        </div>
+    </div>
+</body>
+
+</html>
