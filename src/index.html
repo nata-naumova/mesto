@@ -15,14 +15,15 @@
 
     <main class="main">
         <section class="profile">
-            <img src="./images/avatar.jpg" alt="Аватар пользователя" class="profile__avatar">
+            <img src="#" alt="Аватар пользователя" class="profile__avatar">
+            <button class="profile__avatar-btn"></button>
             <div class="profile__info">
                 <div class="profile__top">
-                    <h1 class="profile__title">Иван</h1>
+                    <h1 class="profile__title"></h1>
                     <button type="button" class="profile__edit-btn btn popup-edit-profile"
                         aria-label="Редактировать профиль" data-dismiss="popup_1"></button>
                 </div>
-                <p class="profile__subtitle">Исследователь не океана</p>
+                <p class="profile__subtitle"></p>
             </div>
             <button type="button" class="profile__add-btn btn popup-add-card" aria-label="Добавить запись"
                 data-dismiss="popup_2"></button>
@@ -44,23 +45,42 @@
             <button type="button" class="element__trash btn" aria-label="Удалить карточку"></button>
             <div class="element__group">
                 <h2 class="element__title"></h2>
-                <button type="button" class="element__btn" aria-label="Поставить лайк"></button>
+                <div class="element__likes">
+                    <button type="button" class="element__like-btn" aria-label="Поставить лайк"></button>
+                    <span class="element__likes-number"></span>
+                </div>
             </div>
         </article>
     </template>
 
-    <!-- Модальное окно с формой -->
+    <!-- Модальное окно с формой редактирования аватара -->
+    <div id="popup_avatar" class="popup popup_type_avatar">
+        <div class="popup__content">
+            <h2 class="popup__title">Обновить аватар</h2>
+            <form action="#" method="POST" name="avatarProfileForm" class="popup__form avatar-profile" novalidate>
+                <label for="input-avatar" class="popup__field">
+                    <input type="url" id="input-avatar" name="avatar" class="popup__input"
+                        placeholder="Ссылка на картинку" required>
+                    <span class="popup__input-error" id="input-avatar-error"></span>
+                </label>
+                <button type="submit" class="popup__btn">Сохранить</button>
+            </form>
+            <button type="button" class="btn popup__close popup-close-avatar" aria-label="Закрыть"></button>
+        </div>
+    </div>
+
+    <!-- Модальное окно с формой редактирования профиля -->
     <div id="popup_1" class="popup popup_type_edit-profile">
         <div class="popup__content">
             <h2 class="popup__title">Редактировать профиль</h2>
             <form action="#" method="POST" name="editProfileForm" class="popup__form edit-profile" novalidate>
                 <label for="input-title" class="popup__field">
-                    <input type="text" id="input-title" class="popup__input" name="title" placeholder="Имя" required
+                    <input type="text" id="input-title" class="popup__input" name="name" placeholder="Имя" required
                         minlength="2" maxlength="40">
                     <span class="popup__input-error" id="input-title-error"></span>
                 </label>
                 <label for="input-job" class="popup__field">
-                    <input type="text" id="input-job" class="popup__input" name="job" placeholder="О себе" required
+                    <input type="text" id="input-job" class="popup__input" name="about" placeholder="О себе" required
                         minlength="2" maxlength="200">
                     <span class="popup__input-error" id="input-job-error"></span>
                 </label>
@@ -88,6 +108,17 @@
                 <button type="submit" class="popup__btn">Создать</button>
             </form>
             <button type="button" class="btn popup__close popup-close-add" aria-label="Закрыть"></button>
+        </div>
+    </div>
+
+    <!-- Модальное окно удаления карточки -->
+    <div class="popup popup_type_delete-card">
+        <div class="popup__content">
+            <button type="button" class="btn popup__close popup-close-delete" aria-label="Закрыть"></button>
+            <h2 class="popup__title popup__title_delete">Вы уверены?</h2>
+            <form action="#" name="deleteCardForm" class="popup__form delete-card" novalidate>
+                <button type="submit" class="popup__btn">Да</button>
+            </form>
         </div>
     </div>
 

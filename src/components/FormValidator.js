@@ -11,21 +11,24 @@ export class FormValidator {
         this._inputList = Array.from(this._form.querySelectorAll(`.${this._inputSelector}`));
         this._buttonElement = this._form.querySelector(`.${this._submitButtonSelector}`);
     }
-    //показать ошибки
+
+    /* ---------- Показать ошибки ----------- */
     _showInputError(inputElement, errorMessage) {
         const errorElement = this._form.querySelector(`#${inputElement.id}-error`);
         inputElement.classList.add(this._inputErrorClass);
         errorElement.textContent = errorMessage;
         errorElement.classList.add(this._errorClass);
     }
-    //скрыть ошибки
+
+    /* ---------- Скрыть ошибки ----------- */
     _hideInputError(inputElement) {
         const errorElement = this._form.querySelector(`#${inputElement.id}-error`);
         inputElement.classList.remove(this._inputErrorClass);
         errorElement.textContent = "";
         errorElement.classList.remove(this._errorClass);
     }
-    //проверка валидности инпута (показывает-скрывает ошибки)
+
+    /* ---------- Проверка валидности ----------- */
     _checkInputValidity(inputElement) {
         if (!inputElement.validity.valid) {
             this._showInputError(inputElement, inputElement.validationMessage);
@@ -33,13 +36,15 @@ export class FormValidator {
             this._hideInputError(inputElement);
         }
     }
-    //проверка валидности всех инпутов
+
+    /* ---------- Проверка валидности всех полей ----------- */
     _hasInvalidInput() {
         return this._inputList.some((inputEl) => {
             return !inputEl.validity.valid;
         });
     }
-    //добавление/удаление класса кнопке
+
+    /* ---------- Добавление-Удаление класса кнопке ----------- */
     _toggleButtonState() {
         if (this._hasInvalidInput()) {
             this._buttonElement.classList.add(this._inactiveButtonClass);
@@ -50,6 +55,7 @@ export class FormValidator {
         }
     }
 
+    /* ---------- Слушатель полей ----------- */
     _setEventListeners() {
         this._toggleButtonState();
 
@@ -60,12 +66,14 @@ export class FormValidator {
             });
         });
     }
-    //включение валидации текущей формы
+
+    /* ---------- Включение валидации формы ----------- */
     enableValidation = () => {
         this._form.addEventListener('submit', (evt) => { evt.preventDefault(); });
         this._setEventListeners();
     }
 
+    /* ---------- Выключение валидации формы ----------- */
     resetValidation = () => {
         this._toggleButtonState();
         this._inputList.forEach((inputElement) => {

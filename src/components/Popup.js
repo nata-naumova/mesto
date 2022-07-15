@@ -23,16 +23,19 @@ export default class Popup {
         }
     }
 
+    /* ---------- Слушатели попапа ----------- */
     setEventListeners() {
         this._popup.addEventListener('mousedown', this._handleCloseOverlayClick);
         this._closeButton.addEventListener('click', this._handleCloseBtnClick);
     }
 
+    /* ---------- Открытие попапа ----------- */
     open() {
         document.addEventListener('keydown', this._handleEscClose);
         this._popup.classList.add(this._activeModifier);
     }
 
+    /* ---------- Закрытие попапа ----------- */
     close() {
         document.removeEventListener('keydown', this._handleEscClose);
         this._popup.classList.remove(this._activeModifier);

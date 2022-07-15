@@ -10,7 +10,8 @@ export default class PopupWithImage extends Popup {
         this.open = this.open.bind(this);
     }
 
-    open(item) { //перезаписывает родительский метод open
+    /* ---------- Открытие попапа с картинкой ----------- */
+    open(item) {
         const { name, link } = item;
         this._imageElement.src = link;
         this._imageElement.alt = name;
