@@ -40,7 +40,6 @@ export default class PopupWithForm extends Popup {
     _handleSubmit = (event) => {
         event.preventDefault();
         this._submitCallBack(this._getInputValues());
-        this.close();
     }
 
     /* ---------- Закрытие формы и сброс значений полей ----------- */

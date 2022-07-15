@@ -7,7 +7,7 @@ export default class Section { //отрисовка элементов на ст
 
     /* ---------- Добавляем в контейнер ----------- */
     addItem(item) {
-        this._container.append(item);
+        this._container.prepend(item);
     }
 
     /* ---------- Отрисовка ----------- */

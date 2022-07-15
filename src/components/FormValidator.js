@@ -69,7 +69,6 @@ export class FormValidator {
 
     /* ---------- Включение валидации формы ----------- */
     enableValidation = () => {
-        this._form.addEventListener('submit', (evt) => { evt.preventDefault(); });
         this._setEventListeners();
     }
 

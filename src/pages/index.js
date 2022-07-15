@@ -124,7 +124,7 @@ const createCard = (data) => {
 /* ---------- Создание экземпляра класса Section ----------- */
 const cardsContainer = new Section({
     renderer: (card) => {
-        cardsContainer.addItem(createCard(card))
+        cardsContainer.addItem(createCard(card));
     },
 }, cardsContainerSelector);
 
@@ -137,7 +137,7 @@ const handleCardSubmit = (item) => {
     newCardPopup.loadingForm(true);
     api.addCard(item)
         .then((item) => {
-            cardsContainer.addItem(item);
+            cardsContainer.addItem(createCard(item));
             newCardPopup.close();
         })
         .catch((err) => {
