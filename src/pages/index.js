@@ -78,7 +78,7 @@ const viewPopup = new PopupWithImage(
 viewPopup.setEventListeners();
 
 /* ---------- Создание карточки ----------- */
-function createCard(data) {
+const createCard = (data) => {
     const card = new Card(
         data,
         template,
@@ -118,13 +118,13 @@ function createCard(data) {
             }
         }
     );
-    return card;
+    return card.generateCard();
 }
 
 /* ---------- Создание экземпляра класса Section ----------- */
 const cardsContainer = new Section({
     renderer: (card) => {
-        cardsContainer.addItem(createCard(card).generateCard());
+        cardsContainer.addItem(createCard(card));
     },
 }, cardsContainerSelector);
 
@@ -137,7 +137,7 @@ const handleCardSubmit = (item) => {
     newCardPopup.loadingForm(true);
     api.addCard(item)
         .then((item) => {
-            cardsContainer.addItemPrepend(createCard(item).generateCard());
+            cardsContainer.addItemPrepend(createCard(item));
             newCardPopup.close();
         })
         .catch((err) => {
